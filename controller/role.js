@@ -22,8 +22,6 @@ const handlerError=(err)=>
      console.log("token",token)
 
      if(token==null) return res.status(401);
-
-
      jwt.verify(token, process.env.ACCESS_TOKEN_SERCET, function(err, user) {
       if (err) return res.status(400).json({ auth: false, message: 'Failed to authenticate token.' });
       console.log("decoded",user)

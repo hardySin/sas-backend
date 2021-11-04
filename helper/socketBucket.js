@@ -20,14 +20,6 @@ const socketPool=[];
 
    function removeUser(socketId)
     {
-        // if(isSocketExist(socketId))
-        // {
-        //     console.log("isSocketExist",isSocketExist)
-        //     var index = socketPool.indexOf(socketId);
-        //    var s= socketPool.splice(index, 1);
-        //    console.log("splice",s)
-        //   }
-
        const index= socketPool.findIndex(user=>  user.id=== socketId);
        if(index!==-1)
        {

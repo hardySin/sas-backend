@@ -11,7 +11,7 @@ const io = require('socket.io')(http,{
    }  
 })
  dotenv.config();
- const initializeDB= require('./dbConnect')
+ const initializeDB= require('./dbCo  nnect')
 const mainRouter=require('./routerMain')
 var bodyParser = require('body-parser');
 const formidable = require('express-formidable');

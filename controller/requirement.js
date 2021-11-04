@@ -92,6 +92,31 @@ module.exports.createRequirement = (req, res,next)=> {
        });
       }
 
+
+      module.exports.getDisagreeData = (req, res,next)=> {
+        const userId=req.body.userId;
+         Requirement.find({isActive:true, resourceManager:userId ,isAgree:false}, (err, result)=>
+     {
+         console.log("result",result)
+         if(result.length>0)
+         {
+           res.status(200).json({result})
+           }
+      });
+     }
+
+
+     module.exports.getAgreeData = (req, res,next)=> {
+      const userId=req.body.userId; 
+       Requirement.find({isActive:true, resourceManager:userId ,isAgree:true}, (err, result)=>
+   {
+       console.log("result",result)
+       if(result.length>0)
+       {
+         res.status(200).json({result})
+         }
+    });
+   }
        module.exports.updateNotificationView = (req, res,next)=> {
            const filter = { _id: req.body.userId };
           const doc = { $set: {"isViewed":true}};
